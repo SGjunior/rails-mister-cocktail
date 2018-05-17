@@ -1,0 +1,19 @@
+<div class="cocktail-form-container">
+
+  <%= form_for @cocktail do |f| %>
+    <h2>Create your cocktail</h2>
+    <hr>
+    <div class="form-group">
+      <%= f.text_field :name, { placeholder: 'Name', class: 'form-control'} %>
+      <% if @cocktail.errors.messages[:name].any? %>
+      <div class="alert alert-danger alert-form"><i>- <%= @cocktail.errors.messages[:name].join.to_s %></i></div>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Create', { class: 'form-control btn btn-success', id: 'sweet-alert-demo' } %>
+    </div>
+  <% end %>
+
+</div>
+
+

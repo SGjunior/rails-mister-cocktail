@@ -1,0 +1,22 @@
+.cocktail-ingredients-container {
+  margin: 10px auto;
+  // height: 30px;
+  // background-color: $pinkSoft;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+}
+
+.ingredient-container {
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.ingredient {
+  padding: 20px;
+  margin: 5px auto;
+  background-color: $greenSoft;
+  border: none;
+  @extend .btn-danger;
+  @extend .btn;
+}

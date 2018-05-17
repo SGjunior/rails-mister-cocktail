@@ -1,0 +1,17 @@
+.cocktail-form-container  {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.alert-form {
+  font-size: 12px;
+}
+
+.cocktail-form-container form .form-group select {
+  @extend .form-control;
+  option {
+    margin-left: 10px;
+  }
+}

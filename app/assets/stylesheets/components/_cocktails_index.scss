@@ -1,0 +1,32 @@
+.cocktail-container {
+  // padding-top: 20px;
+  padding: 20px;
+
+  background-color: $greenSoft;
+  margin-top: 0 auto;
+  a {
+    text-decoration: none;
+  }
+}
+
+.cocktail-card {
+  height: 175px;
+  background: $orangeSoft;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: $pinkSoft;
+  position: relative;
+  margin: 10px 0;
+}
+
+.cocktail-card:hover {
+  opacity: 0.8;
+}
+
+.cocktail-card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
