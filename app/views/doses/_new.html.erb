@@ -4,10 +4,13 @@
 
     <div class="form-group">
       <%= f.label :ingredient, class: 'form-label' %>
-      <%= f.select :ingredient_id, Ingredient.all.collect { |ingredient| [ ingredient.name, ingredient.id ] } %>
+      <%= select_tag 'dose[ingredient_id]', options_from_collection_for_select(
+            Ingredient.all,
+            :id, :name),
+            class: 'select2' %>
       <% if @dose.errors.messages[:cocktail_id].any? %>
-        <div class="alert alert-danger alert-form"><i>- <%= @dose.errors.messages[:cocktail_id].join.to_s %></i></div>
-      <% end %>
+          <div class="alert alert-danger alert-form"><i>- <%= @dose.errors.messages[:cocktail_id].join.to_s %></i></div>
+        <% end %>
     </div>
 
     <div class="form-group">
@@ -18,10 +21,21 @@
       <% end %>
     </div>
 
-
     <div class="form-group">
       <%= f.submit 'Add Dosage', class: 'form-control btn btn-primary' %>
     </div>
 
   <% end %>
 </div>
+
+<button id="sweet-alert-demo" class="btn btn-primary" onclick='alertA();'>Click me!</button>
+
+<script>
+const alertA = () => {
+    swal({
+      title: "A nice alert",
+      text: "This is a great alert, isn't it?",
+      icon: "success"
+    });
+};
+</script>

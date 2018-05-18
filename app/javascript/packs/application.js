@@ -9,6 +9,7 @@
 
 
 import 'bootstrap';
+import '../components/select2';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
@@ -16,7 +17,12 @@ initUpdateNavbarOnScroll();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-import { bindSweetAlertButtonDemo } from '../components/form'
-bindSweetAlertButtonDemo();
+import { bindSweetAlertButtonDemo } from '../components/form';
+// bindSweetAlertButtonDemo();
 
-console.log('Hello World from Webpacker')
+console.log('Hello World from Webpacker');
+
+
+
+
+
