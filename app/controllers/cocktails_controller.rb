@@ -3,6 +3,8 @@ class CocktailsController < ApplicationController
   def index
 
     @random_id = Cocktail.count > 0 ? (1..Cocktail.count).to_a.sample : 1;
+    @dose = Dose.new #temp
+    @cocktail = Cocktail.find(1);
     # @cocktails_limit = Cocktail.limit(10)
     @cocktails = Cocktail.all
     # raise

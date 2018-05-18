@@ -1,9 +1,12 @@
 <div class="cocktail-show-container">
 <%= render 'cocktails/banner_show' %>
-<%= render 'cocktails/cocktail_show_options' %>
-<%= render 'cocktails/cocktail_show_ingredients' %>
-
-<%= render 'doses/new' %>
-
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= render 'cocktails/cocktail_show_ingredients' %>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <%= render 'doses/new' %>
+  </div>
+</div>
 </div>
 
