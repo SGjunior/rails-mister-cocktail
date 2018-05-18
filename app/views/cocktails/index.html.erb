@@ -86,7 +86,7 @@
 <script>
   Array.prototype.forEach.call(document.querySelectorAll('.mdl-card.something-else'), function(el) {
     // console.log(el);
-    var link = el.querySelector('button');
+    var link = el.querySelector('button.mdl-color--accent');
     if(!link) {
       return;
     }
@@ -114,13 +114,30 @@
     var btn = link.querySelector('i');
     btn.addEventListener('click', function() {
       // location.href = target;
-      $.ajax({
-        url: target,
-        method: 'DELETE'
+      // $.ajax({
+      //   url: target,
+      //   method: 'DELETE'
+      // })
+      //   .done(function( data ) {
+      //     console.log(data);
+      //   });
+      console.log(target)
+      fetch(target, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: ''
       })
-        .done(function( data ) {
-          console.log(data);
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data.hits); // Look at local_names.default
+          // addResults(data.hits);
         });
+
+
+
+
     });
 
 
