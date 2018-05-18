@@ -10,6 +10,7 @@
 
 import 'bootstrap';
 import '../components/select2';
+// import 'material-design-lite';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();

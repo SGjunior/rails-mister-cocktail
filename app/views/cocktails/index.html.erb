@@ -1,2 +1,136 @@
-<%= render 'banner_index' %>
-<%= render 'cocktails_index' %>
+<div class="demo-blog__posts mdl-grid">
+
+<% @cocktails.each do |cocktail| %>
+
+
+
+          <div class="mdl-card mdl-cell mdl-cell--8-col">
+
+            <!-- conditional here  -->
+
+            <% if cocktail.photo? %>
+              <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('<%= cl_image_path cocktail.photo, height: 300, width: 400 %>')">
+            <% else %>
+              <div class="mdl-card__media mdl-color-text--grey-50">
+            <% end %>
+
+              <h3>
+                <%= link_to cocktail_path(cocktail.id) do %>
+                <!-- <a href="entry.html"> -->
+                  <%= cocktail.name %>
+                  <!-- </a> -->
+                  <% end %>
+              </h3>
+
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+              <div class="minilogo"></div>
+              <div>
+                <strong><%= Faker::Pokemon.name %></strong>
+                <span><%= rand(1..10) %> days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+
+
+              <button href="<%= new_cocktail_dose_path(cocktail)  %>"class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
+                  <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                  <span class="visuallyhidden">add</span>
+              </button>
+
+            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+                <ul class="demo-list-item mdl-list">
+                  <% cocktail.doses.each do |dose| %>
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="mdl-list__item"><%= dose.description %></i>
+
+                    </span>
+                    <span class="mdl-list__item-primary-content">
+                      <%= dose.ingredient.name %>
+                    </span>
+
+                    <span class="mdl-list__item-secondary-action">
+                      <button href="<%= dose_path(dose) %>" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><i class="material-icons dose-remove-white">delete</i>
+                      </button>
+                    </span>
+                  </li>
+                  <% end %>
+                </ul>
+            </div>
+            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+              <div>
+                <strong><%= Faker::Pokemon.name %></strong>
+              </div>
+              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
+                <li class="mdl-menu__item">About</li>
+                <li class="mdl-menu__item">Message</li>
+                <li class="mdl-menu__item">Favorite</li>
+                <li class="mdl-menu__item">Search</li>
+              </ul>
+              <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">more_vert</i>
+                <span class="visuallyhidden">show menu</span>
+              </button>
+            </div>
+          </div>
+
+
+<% end %>
+
+</div>
+
+
+<script>
+  Array.prototype.forEach.call(document.querySelectorAll('.mdl-card.something-else'), function(el) {
+    // console.log(el);
+    var link = el.querySelector('button');
+    if(!link) {
+      return;
+    }
+    var target = link.getAttribute('href');
+    // console.log(target);
+    if(!target) {
+      return;
+    }
+    el.addEventListener('click', function() {
+      location.href = target;
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.mdl-list__item-secondary-action'), function(el) {
+    console.log(el);
+    var link = el.querySelector('button');
+    if(!link) {
+      return;
+    }
+    var target = link.getAttribute('href');
+    console.log(target);
+    if(!target) {
+      return;
+    }
+    var btn = link.querySelector('i');
+    btn.addEventListener('click', function() {
+      // location.href = target;
+      $.ajax({
+        url: target,
+        method: 'DELETE'
+      })
+        .done(function( data ) {
+          console.log(data);
+        });
+    });
+
+
+    link.parentElement.parentElement.parentElement.parentElement.addEventListener('mouseenter', function() {
+      btn.classList.remove("dose-remove-white");
+    });
+    link.parentElement.parentElement.parentElement.parentElement.addEventListener('mouseleave', function() {
+      btn.classList.add("dose-remove-white");
+    });
+
+
+  });
+</script>

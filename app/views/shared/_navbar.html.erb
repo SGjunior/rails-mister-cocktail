@@ -8,7 +8,22 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "Add Cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
+    <%= link_to new_cocktail_path do %>
+    <!-- <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
+      <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+      <span class="visuallyhidden">add</span>
+    </button> -->
+    <nav class="demo-nav mdl-cell mdl-cell--12-col">
+            <!-- <div class="section-spacer"></div> -->
+            <!-- <a href="entry.html" class="demo-nav__button" title="show more"> -->
+              Add Cocktail
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+
+                <i class="material-icons" role="presentation">add</i>
+              </button>
+            <!-- </a> -->
+          </nav>
+    <% end %>
   </div>
 </div>

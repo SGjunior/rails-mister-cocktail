@@ -8,17 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %>
 
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <div class="main-container">
+  <body style="background-image: url('<%= cl_image_path 'http://res.cloudinary.com/sgjunior/image/upload/c_scale,h_900,w_1600/v1526672136/wu-yi-196065-unsplash.jpg' %>')">">
+
+    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+      <main class="mdl-layout__content">
+
+      <%= render 'shared/navbar' %>
+
       <%= yield %>
+
+      <%= render 'shared/footer' %>
+      </main>
+      <div class="mdl-layout__obfuscator"></div>
     </div>
-    <%= render 'shared/footer' %>
+
+
+
+
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

@@ -8,11 +8,18 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "material";
+
+// @import "marterial-design-lite/material.min.css";
+// @import "marterial-design-lite";
 
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+@import "components/mdl";
+
 
 .main-container {
   // top: 70px;
