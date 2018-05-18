@@ -18,9 +18,10 @@ import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
 import { bindSweetAlertButtonDemo } from '../components/form';
-// bindSweetAlertButtonDemo();
+bindSweetAlertButtonDemo();
 
 console.log('Hello World from Webpacker');
+
 
 
 
