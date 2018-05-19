@@ -1,0 +1,74 @@
+<!-- Uses a transparent header that draws on top of the layout's background -->
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <!-- <span class="mdl-layout-title">Title</span> -->
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+        <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+        <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+        <!-- <a class="mdl-navigation__link" href="">Add Cocktail</a> -->
+           <!-- link_to new_cocktail_path, { class: 'mdl-navigation__link' } do  -->
+            <!-- Accent-colored raised button with ripple -->
+            <button id="show-dialog" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Add Cocktail
+            </button>
+           <!-- end  -->
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <!-- <span class="mdl-layout-title">Title</span> -->
+      <span class="mdl-layout-title">
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+         <%= image_tag "logo.png", height: 50  %>
+         <span class="div"></span>MisterCocktails
+      <% end %>
+      </span>
+    <nav class="mdl-navigation">
+      <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+      <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+      <!-- <a class="mdl-navigation__link" href="">Link</a> -->
+      <a class="mdl-navigation__link" href="/cocktails/new">Add Cocktail</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+  </main>
+</div>
+
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Allow data collection?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Allowing us to collect data will let us get you the information you want faster.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Agree</button>
+      <button type="button" class="mdl-button close">Disagree</button>
+    </div>
+  </dialog>
+
+
+
+
+
+
+
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+  </script>

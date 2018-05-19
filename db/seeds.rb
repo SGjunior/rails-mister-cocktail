@@ -8,17 +8,25 @@
 
 
 # INGREDIENT SEED
-require 'json'
-require 'open-uri'
+# require 'json'
+# require 'open-uri'
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingredient_list = JSON.parse(open(url).read).flatten
+# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# ingredient_list = JSON.parse(open(url).read).flatten
 
-ingredient_list[1].each do |ingredient|
-  Ingredient.create(name: ingredient['strIngredient1'])
-end
+# ingredient_list[1].each do |ingredient|
+#   Ingredient.create(name: ingredient['strIngredient1'])
+# end
 
 # COCKTAIL SEED
+# 10.times do
+  # Cocktail.create(name: Faker::Pokemon.move)
+# end
+
+# DOSES SEED
+
 10.times do
-  Cocktail.create(name: Faker::Pokemon.move)
+  Dose.create(cocktail_id: 33, ingredient_id: rand(1..130), description: "#{rand(1..100)}cl")
+  Dose.create(cocktail_id: 34, ingredient_id: rand(1..130), description: "#{rand(1..100)}cl")
+  Dose.create(cocktail_id: 35, ingredient_id: rand(1..130), description: "#{rand(1..100)}cl")
 end

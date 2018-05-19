@@ -13,24 +13,15 @@
 
   </head>
 
-  <body style="background-image: url('<%= cl_image_path 'http://res.cloudinary.com/sgjunior/image/upload/c_scale,h_900,w_1600/v1526672136/wu-yi-196065-unsplash.jpg' %>')">">
-
+  <body style="background-image: url('<%= cl_image_path 'https://res.cloudinary.com/sgjunior/image/upload/c_scale,h_900,w_1600/v1526672136/wu-yi-196065-unsplash.jpg' %>')">
+    <%= render 'shared/navbar_mdl' %>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
-
-      <%= render 'shared/navbar' %>
-
       <%= yield %>
-
       <%= render 'shared/footer' %>
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-
-
-
-
-
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

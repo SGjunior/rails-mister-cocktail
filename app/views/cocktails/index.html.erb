@@ -53,8 +53,11 @@
                     </span>
 
                     <span class="mdl-list__item-secondary-action">
+                      <%= link_to dose, method: :delete do%>
                       <button href="<%= dose_path(dose) %>" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><i class="material-icons dose-remove-white">delete</i>
                       </button>
+                      <% end %>
+
                     </span>
                   </li>
                   <% end %>
@@ -121,20 +124,10 @@
       //   .done(function( data ) {
       //     console.log(data);
       //   });
-      console.log(target)
-      fetch(target, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: ''
-      })
-        .then(response => response.json())
-        .then((data) => {
-          console.log(data.hits); // Look at local_names.default
-          // addResults(data.hits);
-        });
+      console.log(target);
 
+      console.log('test');
+      btn.parentElement.parentElement.parentElement.parentElement.remove();
 
 
 

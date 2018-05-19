@@ -21,7 +21,14 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     @dose.delete
 
-    redirect_to cocktail_path(@dose.cocktail_id)
+    # @member = Member.find(params[:id])
+    # @member.destroy
+    # respond_to do |format|
+      # format.html{ redirect_to cocktails_path}
+      # format.xml { head :ok}
+    # end
+
+    # redirect_to cocktail_path(@dose.cocktail_id)
   end
 
   private
