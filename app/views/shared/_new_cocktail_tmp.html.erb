@@ -1,0 +1,46 @@
+<!-- POPUP FORM TO ADD A COCKTAIL -->
+
+
+<!-- <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop"> -->
+<div id="elFormAdd" class="mdl-card mdl-card__supporting-text" style="position: absolute; right: 40px; top: 60px; background:rgba(255,255,255,0.8); z-index: 10; width: 225px;">
+    <div class="mdl-color-text--primary-contrast  comments">
+        <!-- <form action="#"> -->
+          <% @cocktail = Cocktail.new %>
+          <%= form_for @cocktail do |f| %>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <!-- <input type="text" class="mdl-textfield__input" id="comment"></textarea> -->
+            <%= f.text_field :name, { class: "mdl-textfield__input" } %>
+            <%= f.label :name, { value: 'Name', class: 'mdl-textfield__label' } %>
+          </div>
+
+          <label class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            Upload image
+            <span style="display:none;">
+              <%= f.file_field :photo %>
+            </span>
+          </label>
+
+        <span style="display:none;">
+          <%= f.submit  %>
+        </span>
+
+        <% end %>
+      <!-- </form> -->
+    </div>
+</div>
+
+<script>
+let pInput = document.getElementById('cocktail_photo');
+
+  pInput.addEventListener('input', function (evt) {
+    console.log('start debug');
+    console.log(pInput);
+    console.log(pIntput.value());
+
+    if (pInput.value() !== '') {
+      pInput.parentElement.classList.add('mdl-button--colored');
+    }
+
+// mdl-button--colored
+});
+</script>

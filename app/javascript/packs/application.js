@@ -10,7 +10,6 @@
 
 import 'bootstrap';
 import '../components/select2';
-// import 'material-design-lite';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
@@ -20,6 +19,11 @@ loadDynamicBannerText();
 
 import { bindSweetAlertButtonDemo } from '../components/form';
 bindSweetAlertButtonDemo();
+
+
+import { initForm } from '../components/form_add';
+initForm();
+
 
 console.log('Hello World from Webpacker');
 

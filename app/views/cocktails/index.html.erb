@@ -86,7 +86,27 @@
 </div>
 
 
+
+
+
+
+
 <script>
+
+  let mainCardContainer = document.querySelector('.demo-blog__posts.mdl-grid');
+
+
+
+
+
+
+
+
+
+
+
+
+
   Array.prototype.forEach.call(document.querySelectorAll('.mdl-card.something-else'), function(el) {
     // console.log(el);
     var link = el.querySelector('button.mdl-color--accent');
@@ -104,13 +124,13 @@
   });
 
   Array.prototype.forEach.call(document.querySelectorAll('.mdl-list__item-secondary-action'), function(el) {
-    console.log(el);
+    // console.log(el);
     var link = el.querySelector('button');
     if(!link) {
       return;
     }
     var target = link.getAttribute('href');
-    console.log(target);
+    // console.log(target);
     if(!target) {
       return;
     }
@@ -124,9 +144,9 @@
       //   .done(function( data ) {
       //     console.log(data);
       //   });
-      console.log(target);
+      // console.log(target);
 
-      console.log('test');
+      // console.log('test');
       btn.parentElement.parentElement.parentElement.parentElement.remove();
 
 

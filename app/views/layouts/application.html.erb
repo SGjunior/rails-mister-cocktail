@@ -18,9 +18,11 @@
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
       <%= yield %>
+      <div style="height: 100vh;"></div>
       <%= render 'shared/footer' %>
       </main>
       <div class="mdl-layout__obfuscator"></div>
+
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
